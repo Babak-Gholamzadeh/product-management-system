@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "ab015e6b-b203-4c64-a813-9b2ff3332e18",
+		"name": "Product Management System",
+		"description": "This system includes all the information about companies and their products.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Creates a new company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"company-name\",\r\n    \"tel\": \"021525632\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/companies/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						},
+						"description": "Creates a new company in database and adds the info about the company"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves a list of companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/companies/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"companies",
+								""
+							]
+						},
+						"description": "Retrieves all the companies with their products"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves a specific company",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/companies/5ef11ca0d8e55e3cb81c0c0a",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"companies",
+								"5ef11ca0d8e55e3cb81c0c0a"
+							]
+						},
+						"description": "Retrieves a single company with that ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Updates a specific company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tel\": \"0100011\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/companies/5ef11ca0d8e55e3cb81c0c0a",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"companies",
+								"5ef11ca0d8e55e3cb81c0c0a"
+							]
+						},
+						"description": "Updates a single company with that ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a specific company",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/companies/5ef11d35291d23051477f79c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"companies",
+								"5ef11d35291d23051477f79c"
+							]
+						},
+						"description": "Deletes a single company with that ID"
+					},
+					"response": []
+				}
+			],
+			"description": "All the APIs for companies",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fd2266a4-023a-4137-9387-a377a296af8e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d99aa95-59a3-4941-867f-9a8bcbcd2891",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Creates a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"product-title\",\r\n    \"productType\": \"type 2\",\r\n    \"productionDate\": \"2/3/2018\",\r\n    \"company\": \"5ef121074aba222f4ceddfd9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL2}}/products/",
+							"host": [
+								"{{URL2}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "Creates a new product in database and adds the info about the product"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves a list of products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL2}}/products",
+							"host": [
+								"{{URL2}}"
+							],
+							"path": [
+								"products"
+							]
+						},
+						"description": "Retrieves all the products information"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieves a specific product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL2}}/products/5ef12607ed6eef3700a632de",
+							"host": [
+								"{{URL2}}"
+							],
+							"path": [
+								"products",
+								"5ef12607ed6eef3700a632de"
+							]
+						},
+						"description": "Retrieves a single product with that ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Updates a specific product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Product new title\",\r\n    \"productionDate\": \"2/5/2019\",\r\n    \"company\": \"5ef12153676582353c8c2212\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL2}}/products/5ef12607ed6eef3700a632de",
+							"host": [
+								"{{URL2}}"
+							],
+							"path": [
+								"products",
+								"5ef12607ed6eef3700a632de"
+							]
+						},
+						"description": "Updates a single product with that ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletes a specific product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL2}}/products/5ef12607ed6eef3700a632de",
+							"host": [
+								"{{URL2}}"
+							],
+							"path": [
+								"products",
+								"5ef12607ed6eef3700a632de"
+							]
+						},
+						"description": "Deletes a single product with that ID"
+					},
+					"response": []
+				}
+			],
+			"description": "All the APIs for products",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
